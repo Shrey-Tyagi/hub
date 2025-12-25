@@ -1,0 +1,100 @@
+.diff-viewer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  height: 100%;
+  min-height: 400px;
+}
+
+.diff-viewer-left,
+.diff-viewer-right {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.diff-viewer-header {
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.diff-viewer-content {
+  flex: 1;
+  overflow-y: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.diff-line {
+  display: flex;
+  min-height: 1.6em;
+  padding: 0 0.5rem;
+}
+
+.diff-line-number {
+  display: inline-block;
+  min-width: 3rem;
+  padding-right: 1rem;
+  text-align: right;
+  color: #999;
+  user-select: none;
+  background-color: #f9f9f9;
+  border-right: 1px solid #eee;
+}
+
+.diff-line-content {
+  flex: 1;
+  padding-left: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.diff-line-equal {
+  background-color: #fff;
+}
+
+.diff-line-delete {
+  background-color: #ffebee;
+}
+
+.diff-line-delete .diff-line-content {
+  color: #c62828;
+  text-decoration: line-through;
+}
+
+.diff-line-insert {
+  background-color: #e8f5e9;
+}
+
+.diff-line-insert .diff-line-content {
+  color: #2e7d32;
+}
+
+.diff-line-empty {
+  background-color: #fafafa;
+}
+
+.diff-line-empty .diff-line-content {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .diff-viewer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  
+  .diff-viewer-left {
+    border-bottom: 2px solid #ddd;
+  }
+}
+
